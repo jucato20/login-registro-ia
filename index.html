@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión · AuthApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <div class="auth-brand__logo">A</div>
+        <span class="auth-brand__name">AuthApp</span>
+      </div>
+
+      <h1>Bienvenido de nuevo</h1>
+      <span class="auth-card__subtitle">Inicia sesión para continuar</span>
+
+      <div id="formAlert" class="alert" hidden></div>
+
+      <form id="loginForm" class="auth-form" novalidate>
+        <div class="field">
+          <label for="identifier">Usuario o correo electrónico</label>
+          <input type="text" id="identifier" name="identifier" autocomplete="username" placeholder="usuario o correo@ejemplo.com" />
+          <span class="field-error" id="err-identifier"></span>
+        </div>
+
+        <div class="field">
+          <label for="password">Contraseña</label>
+          <div class="input-wrap">
+            <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Tu contraseña" />
+            <button type="button" class="toggle-visibility" id="togglePassword" aria-label="Mostrar contraseña">👁</button>
+          </div>
+          <span class="field-error" id="err-password"></span>
+        </div>
+
+        <div class="checkbox-row">
+          <label for="remember">
+            <input type="checkbox" id="remember" name="remember" />
+            Recordar sesión
+          </label>
+          <a href="forgot-password.html">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block" id="submitBtn">Iniciar sesión</button>
+      </form>
+
+      <div class="auth-footer">
+        ¿No tienes cuenta? <a href="register.html">Regístrate</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

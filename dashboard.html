@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · AuthApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="navbar">
+      <div class="auth-brand">
+        <div class="auth-brand__logo">A</div>
+        <span class="auth-brand__name">AuthApp</span>
+      </div>
+      <div class="navbar__actions">
+        <button type="button" class="theme-switch" id="themeToggle">
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">Modo oscuro</span>
+        </button>
+        <button type="button" class="btn btn--danger" id="logoutBtn">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <section class="welcome-card">
+        <div class="avatar" id="avatarInitials">?</div>
+        <div>
+          <h1 id="welcomeText">Hola 👋</h1>
+          <p id="welcomeSub">Bienvenido a tu panel</p>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <section class="panel">
+          <h2>Mi perfil</h2>
+          <span class="panel__subtitle">Actualiza tu nombre y correo electrónico</span>
+
+          <div id="profileAlert" class="alert" hidden></div>
+
+          <form id="profileForm" class="profile-form">
+            <div class="field">
+              <label for="profileUsername">Usuario</label>
+              <input type="text" id="profileUsername" disabled />
+              <span class="hint">El usuario no se puede modificar.</span>
+            </div>
+            <div class="field">
+              <label for="profileFullName">Nombre completo</label>
+              <input type="text" id="profileFullName" />
+              <span class="field-error" id="err-profileFullName"></span>
+            </div>
+            <div class="field">
+              <label for="profileEmail">Correo electrónico</label>
+              <input type="email" id="profileEmail" />
+              <span class="field-error" id="err-profileEmail"></span>
+            </div>
+            <div class="field">
+              <label>Pregunta de seguridad</label>
+              <input type="text" id="profileSecurityQuestion" disabled />
+            </div>
+            <button type="submit" class="btn btn--primary" id="saveProfileBtn">Guardar cambios</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Historial de accesos</h2>
+          <span class="panel__subtitle">Tus últimos inicios de sesión</span>
+          <ul class="history-list" id="historyList">
+            <li class="empty-state">Aún no hay accesos registrados.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
